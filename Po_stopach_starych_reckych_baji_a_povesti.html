@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Po stopách starých řeckých bájí a pověstí</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --night:#120911;
+      --wine:#7f1426;
+      --wine2:#a01f34;
+      --gold:#f0bd56;
+      --paper:#fff6e4;
+      --ink:#261016;
+      --blue:#1265d8;
+      --red:#c51f2f;
+      --green:#188a3c;
+      --shadow:rgba(0,0,0,.45);
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      min-height:100vh;
+      padding:14px;
+      font-family: Georgia, "Times New Roman", serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(240,189,86,.34), transparent 18%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,.12), transparent 14%),
+        linear-gradient(135deg, #10070d 0%, #3a101d 58%, #070408 100%);
+      display:flex;
+      justify-content:center;
+      align-items:stretch;
+    }
+    .app {
+      width:min(1040px,100%);
+      min-height:calc(100vh - 28px);
+      background:
+        linear-gradient(rgba(255,246,228,.94), rgba(255,246,228,.96)),
+        repeating-linear-gradient(45deg, rgba(127,20,38,.04), rgba(127,20,38,.04) 8px, transparent 8px, transparent 18px);
+      border:7px double var(--gold);
+      border-radius:26px;
+      box-shadow:0 24px 80px var(--shadow);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .app::before {
+      content:"";
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(127,20,38,.18);
+      border-radius:18px;
+      pointer-events:none;
+    }
+    h1 {
+      margin:8px 0 4px;
+      text-align:center;
+      color:var(--wine);
+      font-size:clamp(34px,5.5vw,62px);
+      text-shadow:0 2px 0 rgba(240,189,86,.45);
+      letter-spacing:.4px;
+    }
+    .subtitle {
+      text-align:center;
+      color:#6a303a;
+      font-size:18px;
+      margin:0 0 18px;
+    }
+    .card {
+      background:rgba(255,255,255,.76);
+      border:2px solid rgba(127,20,38,.22);
+      border-radius:22px;
+      padding:20px;
+      margin:14px 0;
+      box-shadow:0 10px 28px rgba(61,20,28,.12);
+    }
+    .startCard {
+      max-width:760px;
+      margin:20px auto 0;
+      padding:24px;
+    }
+    .row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    label {
+      display:block;
+      font-weight:bold;
+      margin-bottom:7px;
+      color:#4b2028;
+      font-size:18px;
+    }
+    input {
+      width:100%;
+      padding:14px 15px;
+      border-radius:15px;
+      border:2px solid rgba(127,20,38,.36);
+      font-size:19px;
+      background:#fff;
+      outline:none;
+    }
+    input:focus {
+      border-color:var(--wine2);
+      box-shadow:0 0 0 4px rgba(160,31,52,.14);
+    }
+    button, a.btn {
+      cursor:pointer;
+      border:0;
+      border-radius:18px;
+      padding:16px 24px;
+      font-weight:bold;
+      font-size:20px;
+      color:white;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing:.3px;
+      transition:transform .08s ease, filter .12s ease;
+    }
+    button:active, a.btn:active { transform:translateY(2px); }
+    .btnTest {
+      background:linear-gradient(135deg, #a71934, #6f1022);
+      box-shadow:0 6px 0 #4d0b17, 0 10px 24px rgba(127,20,38,.28);
+    }
+    .btnTable {
+      background:linear-gradient(135deg, #2d6cdf, #17408c);
+      box-shadow:0 6px 0 #102c61, 0 10px 24px rgba(18,101,216,.25);
+    }
+    .btnMenu {
+      background:linear-gradient(135deg, #7b5422, #4c3212);
+      box-shadow:0 6px 0 #2e1d0a;
+    }
+    button:hover, a.btn:hover { filter:brightness(1.06); }
+    button:disabled { opacity:.65; cursor:not-allowed; transform:none; }
+    .center { text-align:center; }
+    .hidden { display:none !important; }
+    .startButtons {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:22px;
+    }
+    .topbar {
+      display:grid;
+      grid-template-columns:1fr 1.1fr 1fr;
+      gap:12px;
+      align-items:center;
+      margin:10px 0 14px;
+    }
+    .pill {
+      background:linear-gradient(135deg, #f8e6bd, #efd18a);
+      border:1px solid rgba(127,20,38,.25);
+      padding:10px 13px;
+      border-radius:999px;
+      color:#562730;
+      font-weight:bold;
+      text-align:center;
+      box-shadow:0 4px 12px rgba(61,20,28,.10);
+    }
+    #timeText {
+      font-size:clamp(22px,3.2vw,34px);
+      color:#7f1426;
+      padding:10px 16px;
+      border:2px solid rgba(127,20,38,.34);
+      text-shadow:0 2px 0 rgba(255,255,255,.55);
+    }
+.questionCard {
+      position:relative;
+      padding:24px;
+      background:
+        radial-gradient(circle at top left, rgba(240,189,86,.18), transparent 34%),
+        rgba(255,255,255,.80);
+    }
+    .question {
+      font-size:clamp(23px,3vw,33px);
+      line-height:1.35;
+      margin:8px 0 22px;
+      color:#260c13;
+      font-weight:bold;
+      text-align:center;
+    }
+
+    .balladBadge {
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto 14px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #7f1426, #a01f34);
+      color: #fff6e4;
+      border: 2px solid rgba(240,189,86,.85);
+      box-shadow: 0 5px 14px rgba(127,20,38,.26);
+      font-weight: bold;
+      font-size: clamp(18px,2.5vw,26px);
+      letter-spacing: .7px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .answers {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .answer {
+      min-height:92px;
+      text-align:left;
+      background:linear-gradient(135deg, #fffefb, #f8ead0);
+      color:var(--ink);
+      box-shadow:0 5px 0 rgba(127,20,38,.18), 0 9px 20px rgba(0,0,0,.08);
+      border:2px solid rgba(127,20,38,.26);
+      font-size:19px;
+      line-height:1.25;
+      padding:15px 16px;
+    }
+
+    .answer:disabled {
+      opacity:1;
+      cursor:default;
+      filter:none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .answer:hover {
+        border-color:var(--wine2);
+        transform:translateY(-1px);
+      }
+    }
+
+    .answer:focus,
+    .answer:active {
+      outline:none;
+      transform:none;
+    }
+
+    .answer {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .answer.correctReveal {
+      background:linear-gradient(135deg, #e4f0ff, #5fa1ff) !important;
+      border-color:var(--blue) !important;
+      color:#041f52 !important;
+      box-shadow:0 5px 0 #0d4fae, 0 0 0 6px rgba(18,101,216,.20) !important;
+    }
+    .answer.wrongReveal {
+      background:linear-gradient(135deg, #ffd1d1, #df2636) !important;
+      border-color:var(--red) !important;
+      color:#ffffff !important;
+      box-shadow:0 5px 0 #8d1520, 0 0 0 6px rgba(197,31,47,.22) !important;
+    }
+    .feedback {
+      margin-top:18px;
+      min-height:46px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:clamp(24px,3.4vw,36px);
+      font-weight:bold;
+      text-align:center;
+    }
+    .feedback.good { color:var(--green); }
+    .feedback.bad { color:var(--red); }
+    .feedback.blue { color:var(--blue); }
+    .result-big {
+      font-size:clamp(32px,5vw,54px);
+      color:var(--wine);
+      font-weight:bold;
+      margin:12px 0;
+      text-shadow:0 2px 0 rgba(240,189,86,.45);
+    }
+
+    .resultScore {
+      margin: 18px auto;
+      max-width: 460px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: linear-gradient(135deg,#fff7d6,#f2d076);
+      border: 3px solid #d2a22b;
+      box-shadow: 0 9px 24px rgba(0,0,0,.16);
+    }
+    .resultLabel {
+      font-size: 22px;
+      font-weight: bold;
+      color: #7f1426;
+      margin-bottom: 8px;
+      letter-spacing: .5px;
+    }
+    .resultValue {
+      font-size: clamp(42px,7vw,62px);
+      font-weight: bold;
+      color: #1265d8;
+      line-height: 1;
+    }
+    .resultGrade {
+      font-size: clamp(54px,9vw,78px);
+      font-weight: bold;
+      color: #188a3c;
+      line-height: 1;
+    }
+
+    .small { color:#684047; font-size:14px; }
+    .bottomMenu {
+      margin-top:22px;
+      padding-top:16px;
+      border-top:2px solid rgba(127,20,38,.18);
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    @media(max-width:720px){
+      body{padding:7px;}
+      .app{padding:13px; border-width:4px;}
+      .row, .startButtons, .topbar, .answers{grid-template-columns:1fr;}
+      button, a.btn{width:100%;}
+      .answer{font-size:17px; min-height:74px;}
+      .questionCard{padding:16px;}
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <h1>Po stopách starých řeckých bájí a pověstí</h1>
+  <div class="subtitle">test skutečné četby • podle Eduarda Petišky</div>
+
+  <section id="screenStart" class="card startCard">
+    <div class="row">
+      <div>
+        <label for="surname">Příjmení</label>
+        <input id="surname" autocomplete="family-name" placeholder="např. Novák">
+      </div>
+      <div>
+        <label for="className">Třída</label>
+        <input id="className" placeholder="např. 2.A">
+      </div>
+    </div>
+
+    <p>24 otázek • 4 z každé báje • 20 sekund na otázku • 1 bod za správnou odpověď.</p>
+    <p class="small">Prométheus · Midas · Tantalos · Sisyfos · Perseus · Orfeus<br>
+    Známkování: 1 = 22–24 bodů · 2 = 19–21 · 3 = 16–18 · 4 = 13–15 · 5 = 0–12.<br>
+    Opuštění stránky na více než 1,2 sekundy ukončí test jako neplatný (označení 6).</p>
+    <div class="startButtons">
+      <button class="btnTest" id="startBtn" type="button">TEST</button>
+      <a class="btn btnTable" href="https://docs.google.com/spreadsheets/d/1_dtTEdaPKPPNqQvlmE_LKqeoZmWMQ9w7JfCWuKyD1EA/edit?usp=sharing" target="_blank" rel="noopener">VÝSLEDKOVÁ TABULKA</a>
+    </div>
+  </section>
+
+  <section id="screenQuiz" class="hidden">
+    <div class="topbar">
+      <div class="pill" id="progress">Otázka 1/24</div>
+      <div>
+        <div class="pill" id="timeText">Čas: 20 s</div>
+      </div>
+      <div class="pill" id="score">Body: 0</div>
+    </div>
+
+    <div class="card questionCard">
+      <div id="balladBadge" class="balladBadge"></div>
+      <div id="question" class="question"></div>
+      <div id="answers" class="answers"></div>
+      <div id="feedback" class="feedback"></div>
+    </div>
+  </section>
+
+  <section id="screenResult" class="card startCard hidden">
+    <div class="center">
+      <div class="result-big" id="finalTitle"></div>
+      <div id="finalText"></div>
+      <p id="sendStatus" class="small"></p>
+      <div class="bottomMenu">
+        <button class="btnMenu" onclick="goMenu()">HLAVNÍ MENU</button>
+        <a class="btn btnTable" href="https://docs.google.com/spreadsheets/d/1_dtTEdaPKPPNqQvlmE_LKqeoZmWMQ9w7JfCWuKyD1EA/edit?usp=sharing" target="_blank" rel="noopener">VÝSLEDKOVÁ TABULKA</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyOR9AyqAgzzHaakd0RYDdP906iyHbkNko30yWRgnmDNelQGUNq_5yTbrlNClpRo65b/exec";
+const APP_NAME = "Po stopách starých řeckých bájí a pověstí";
+const TABLE_URL = "https://docs.google.com/spreadsheets/d/1_dtTEdaPKPPNqQvlmE_LKqeoZmWMQ9w7JfCWuKyD1EA/edit?usp=sharing";
+const TEST_COUNT = 24;
+const PASS_LIMIT = 13;
+const QUESTION_TIME = 20;
+const REVEAL_TIME = 2000;
+
+const QUESTIONS = [
+  {
+    "q": "Z čeho Prométheus vytvořil prvního člověka?",
+    "a": [
+      "Z hlíny a dešťové vody.",
+      "Z mořského písku a pěny.",
+      "Z kamene a vlastní krve.",
+      "Z popela a říčního bahna."
+    ],
+    "correct": "Z hlíny a dešťové vody.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Jak se na stvoření člověka podílela Pallas Athéna?",
+    "a": [
+      "Vdechla mu ducha.",
+      "Naučila ho mluvit.",
+      "Darovala mu nesmrtelnost.",
+      "Vytvořila mu obličej."
+    ],
+    "correct": "Vdechla mu ducha.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Proč se Prométheus vydal mezi první lidi?",
+    "a": [
+      "Nedokázali užívat ducha a potřebovali se naučit žít.",
+      "Začali mezi sebou válčit.",
+      "Chtěli vystavět schodiště na Olymp.",
+      "Měl jim vybrat krále."
+    ],
+    "correct": "Nedokázali užívat ducha a potřebovali se naučit žít.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Co Zeus vytýkal Prométheovi, když viděl pokroky lidí?",
+    "a": [
+      "Nenaučil je náležitě uctívat bohy a obětovat jim.",
+      "Nenaučil je obdělávat půdu.",
+      "Nenaučil je zacházet s ohněm.",
+      "Nenaučil je rozeznávat bohy."
+    ],
+    "correct": "Nenaučil je náležitě uctívat bohy a obětovat jim.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Které zvíře Prométheus zabil při přípravě rozdělení oběti?",
+    "a": [
+      "Býka.",
+      "Berana.",
+      "Jelena.",
+      "Kance."
+    ],
+    "correct": "Býka.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Jak Prométheus ukryl maso, které chtěl ponechat lidem?",
+    "a": [
+      "Vložil ho do kůže a navrch položil žaludek.",
+      "Zabalil ho do listí.",
+      "Přikryl ho kostmi.",
+      "Schoval ho pod oltář."
+    ],
+    "correct": "Vložil ho do kůže a navrch položil žaludek.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Čím Prométheus zakryl hromadu kostí, aby vypadala lákavě?",
+    "a": [
+      "Tukem.",
+      "Kůží.",
+      "Masem.",
+      "Obilím."
+    ],
+    "correct": "Tukem.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Co platí o Diově výběru obětního dílu připraveného Prométheem?",
+    "a": [
+      "Lest poznal, přesto vybral tuk s kostmi.",
+      "Nechal vybrat Athénu.",
+      "Lest nepoznal a vybral maso.",
+      "Oba díly odmítl."
+    ],
+    "correct": "Lest poznal, přesto vybral tuk s kostmi.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Jak Zeus potrestal lidi za rozdělení oběti připravené Prométheem?",
+    "a": [
+      "Deštěm uhasil ohniště a větrem odnesl horký popel.",
+      "Zaplavil jejich příbytky.",
+      "Zničil úrodu suchem.",
+      "Nechal roztrhat jejich stáda."
+    ],
+    "correct": "Deštěm uhasil ohniště a větrem odnesl horký popel.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Odkud Prométheus získal oheň pro lidi zpět?",
+    "a": [
+      "Z krbu v Diově paláci.",
+      "Z Héfaistovy kovárny.",
+      "Ze slunečního vozu.",
+      "Z nitra sopky."
+    ],
+    "correct": "Z krbu v Diově paláci.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "V čem Prométheus odnesl získaný oheň?",
+    "a": [
+      "V duté holi.",
+      "V hliněném džbánu.",
+      "V bronzové přilbě.",
+      "Ve zvířecím rohu."
+    ],
+    "correct": "V duté holi.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Co Diovi prozradilo, že lidé mají opět oheň?",
+    "a": [
+      "Vůně jídla a kouř z komínů.",
+      "Požár lesa.",
+      "Héfaistova zpráva.",
+      "Děkovné volání lidí."
+    ],
+    "correct": "Vůně jídla a kouř z komínů.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Před čím Prométheus varoval svého bratra Epiméthea?",
+    "a": [
+      "Aby nepřijímal dary od bohů.",
+      "Aby nevstupoval do kovárny.",
+      "Aby neprozradil původ ohně.",
+      "Aby neopouštěl dům."
+    ],
+    "correct": "Aby nepřijímal dary od bohů.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Kdo přivedl Pandoru k Epimétheovi?",
+    "a": [
+      "Hermes.",
+      "Héfaistos.",
+      "Apollón.",
+      "Zeus."
+    ],
+    "correct": "Hermes.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Proč Pandora otevřela zlatou schránku?",
+    "a": [
+      "Epimétheus ji požádal, aby ukázala její obsah.",
+      "Chtěla do ní ukrýt oheň.",
+      "Přikázal jí to Prométheus.",
+      "Myslela, že je uvnitř pták."
+    ],
+    "correct": "Epimétheus ji požádal, aby ukázala její obsah.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Co po úniku strastí zůstalo téměř celé v Pandořině schránce?",
+    "a": [
+      "Naděje.",
+      "Štěstí.",
+      "Zdraví.",
+      "Moudrost."
+    ],
+    "correct": "Naděje.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Kdo na Diův rozkaz připoutal Prométhea ke kavkazské skále?",
+    "a": [
+      "Héfaistos s pomocníky.",
+      "Hermes s průvodci.",
+      "Áres s bojovníky.",
+      "Poseidón s kyklopy."
+    ],
+    "correct": "Héfaistos s pomocníky.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Proč Zeus přidal k Prométheovu připoutání ještě utrpení působené orlem?",
+    "a": [
+      "Prométheus se nepokořil a neprosil o milost.",
+      "Prométheus rozlomil skálu.",
+      "Lidé přestali obětovat.",
+      "Epimétheus odmítl vrátit Pandoru."
+    ],
+    "correct": "Prométheus se nepokořil a neprosil o milost.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Jak Hérakles odstranil orla trýznícího Prométhea?",
+    "a": [
+      "Zastřelil ho jediným šípem.",
+      "Srazil ho kyjem.",
+      "Chytil ho do sítě.",
+      "Přesekl mu křídla."
+    ],
+    "correct": "Zastřelil ho jediným šípem.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Proč osvobozený Prométheus nosil prsten s kamenem z kavkazské skály?",
+    "a": [
+      "Zůstával symbolicky připoután a Diův výrok byl splněn.",
+      "Prsten mu bránil vystoupit na Olymp.",
+      "Připomínal úkryt ohně.",
+      "Udržoval jeho nesmrtelnost."
+    ],
+    "correct": "Zůstával symbolicky připoután a Diův výrok byl splněn.",
+    "cast": "Prométheus"
+  },
+  {
+    "q": "Jaké mínění měl Midas sám o sobě?",
+    "a": [
+      "Že všemu rozumí a nejlépe rozhodne.",
+      "Že je špatný vládce.",
+      "Že je nejchudší král.",
+      "Že hraje lépe než Apollón."
+    ],
+    "correct": "Že všemu rozumí a nejlépe rozhodne.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jaký vztah měl Silénos k Dionýsovi?",
+    "a": [
+      "Vychoval ho a patřil k jeho družině.",
+      "Byl jeho synem.",
+      "Byl jeho nepřítelem.",
+      "Byl knězem v jeho chrámu."
+    ],
+    "correct": "Vychoval ho a patřil k jeho družině.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jak dlouho Midas hostil Siléna?",
+    "a": [
+      "Deset dní a deset nocí.",
+      "Tři dny a tři noci.",
+      "Sedm dní a sedm nocí.",
+      "Celý měsíc."
+    ],
+    "correct": "Deset dní a deset nocí.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Které zvíře daroval Midas Silénovi na cestu?",
+    "a": [
+      "Osla.",
+      "Koně.",
+      "Velblouda.",
+      "Býka."
+    ],
+    "correct": "Osla.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Proč Dionýsos nabídl Midasovi splnění přání?",
+    "a": [
+      "Pohostil jeho pěstouna a přivedl ho zpět.",
+      "Vystavěl mu chrám.",
+      "Vyhrál soutěž.",
+      "Zachránil vinici."
+    ],
+    "correct": "Pohostil jeho pěstouna a přivedl ho zpět.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Co si Midas přál od Dionýsa?",
+    "a": [
+      "Aby se ve zlato proměnilo vše, čeho se dotkne.",
+      "Pokladnici plnou zlata každou noc.",
+      "Najít zlatý důl.",
+      "Proměnit pouze palác ve zlato."
+    ],
+    "correct": "Aby se ve zlato proměnilo vše, čeho se dotkne.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Na čem Midas nejprve vyzkoušel zlatý dotek?",
+    "a": [
+      "Na snítce ulomené ze stromu.",
+      "Na koňské uzdě.",
+      "Na prstenu.",
+      "Na poháru."
+    ],
+    "correct": "Na snítce ulomené ze stromu.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jak se Midas při hostině pokusil obejít účinek zlatého doteku?",
+    "a": [
+      "Požádal služebníky, aby ho krmili.",
+      "Jedl dřevěnou lžící.",
+      "Nechal jídlo vychladit.",
+      "Zabalil si ruce."
+    ],
+    "correct": "Požádal služebníky, aby ho krmili.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Proč se Midas nenajedl ani při krmení služebníky?",
+    "a": [
+      "Pokrm se proměnil ve zlato při doteku rtů.",
+      "Služebníci se báli přiblížit.",
+      "Mísy zezlátly už v kuchyni.",
+      "Dionýsos zakázal pomoc."
+    ],
+    "correct": "Pokrm se proměnil ve zlato při doteku rtů.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jak se měl Midas podle Dionýsa zbavit zlatého doteku?",
+    "a": [
+      "Celý se ponořit do řeky Paktolu.",
+      "Obětovat všechno zlato.",
+      "Napít se z pramene.",
+      "Spát pod širým nebem."
+    ],
+    "correct": "Celý se ponořit do řeky Paktolu.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Co zůstalo v řece po Midasově koupeli?",
+    "a": [
+      "Zlatý písek.",
+      "Zlaté ryby.",
+      "Zlaté kameny na březích.",
+      "Zlaté listy rostlin."
+    ],
+    "correct": "Zlatý písek.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Na jaký nástroj hrál Pan, kterému Midas naslouchal?",
+    "a": [
+      "Na syrinx, rákosovou píšťalu.",
+      "Na lyru.",
+      "Na buben.",
+      "Na trubku."
+    ],
+    "correct": "Na syrinx, rákosovou píšťalu.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Kdo rozhodoval soutěž Pana a Apollóna?",
+    "a": [
+      "Božstvo pohoří Tmólos.",
+      "Dionýsos.",
+      "Midas.",
+      "Sbor Múz."
+    ],
+    "correct": "Božstvo pohoří Tmólos.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Kdo zvítězil v hudební soutěži, které přihlížel Midas?",
+    "a": [
+      "Apollón.",
+      "Pan.",
+      "Oba se rozdělili o vítězství.",
+      "Nikdo, skončila nerozhodně."
+    ],
+    "correct": "Apollón.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jak Midas zdůvodnil nesouhlas s výsledkem hudební soutěže?",
+    "a": [
+      "Pan se mu líbil víc, a proto musel být lepší.",
+      "Apollón hrál krátce.",
+      "Pan ovládal oba nástroje.",
+      "Apollón opakoval melodii."
+    ],
+    "correct": "Pan se mu líbil víc, a proto musel být lepší.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Kdo proměnil Midasovy uši v oslí?",
+    "a": [
+      "Apollón.",
+      "Pan.",
+      "Dionýsos.",
+      "Tmólos."
+    ],
+    "correct": "Apollón.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jak Midas skrýval oslí uši?",
+    "a": [
+      "Velikým turbanem.",
+      "Korunou.",
+      "Kapucí.",
+      "Dlouhými vlasy."
+    ],
+    "correct": "Velikým turbanem.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Proč musel Midas ukázat oslí uši služebníkovi?",
+    "a": [
+      "Potřeboval ostříhat přerostlé vlasy.",
+      "Služebník ho překvapil při koupání.",
+      "Měl poraněné ucho.",
+      "Potřeboval novou korunu."
+    ],
+    "correct": "Potřeboval ostříhat přerostlé vlasy.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jak si Midasův služebník ulevil od tajemství o oslích uších?",
+    "a": [
+      "Zašeptal je do jamky a zasypal ji.",
+      "Napsal je na kámen.",
+      "Pošeptal je oslu.",
+      "Vyryl je do kmene."
+    ],
+    "correct": "Zašeptal je do jamky a zasypal ji.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jak se lidé dozvěděli o Midasových oslích uších?",
+    "a": [
+      "Rákosí nad jamkou je šeptalo ve větru.",
+      "Služebník mluvil ze spaní.",
+      "Spadl mu turban.",
+      "Oznámil to Apollón."
+    ],
+    "correct": "Rákosí nad jamkou je šeptalo ve větru.",
+    "cast": "Midas"
+  },
+  {
+    "q": "Jakou výsadu poskytli bohové Tantalovi?",
+    "a": [
+      "Směl na jejich hostiny na Olympu.",
+      "Rozhodoval osudy králů.",
+      "Směl se vracet z podsvětí.",
+      "Používal Diovy blesky."
+    ],
+    "correct": "Směl na jejich hostiny na Olympu.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Co si Tantalos namlouval díky přátelství s bohy?",
+    "a": [
+      "Že se od nich vlastně neliší.",
+      "Že ovládne podsvětí.",
+      "Že bohy zbaví moci.",
+      "Že dostane Olymp."
+    ],
+    "correct": "Že se od nich vlastně neliší.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Kterou vlastnost bohů Tantalos zkoušel?",
+    "a": [
+      "Vševědoucnost.",
+      "Proměňování.",
+      "Vládu nad počasím.",
+      "Nesmrtelnost."
+    ],
+    "correct": "Vševědoucnost.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Jaký ukradený předmět Tantalos ukryl?",
+    "a": [
+      "Zlatého psa.",
+      "Stříbrného orla.",
+      "Zlatý pohár.",
+      "Bronzovou přilbu."
+    ],
+    "correct": "Zlatého psa.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Odkud pocházel zlatý pes ukrytý u Tantala?",
+    "a": [
+      "Z Diova chrámu na Krétě.",
+      "Z Apollónova chrámu v Delfách.",
+      "Z Poseidónova chrámu.",
+      "Z Athénina chrámu."
+    ],
+    "correct": "Z Diova chrámu na Krétě.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Kdo vyzval Tantala k vrácení zlatého psa?",
+    "a": [
+      "Rozhořčený kněz.",
+      "Zloděj.",
+      "Jeho syn.",
+      "Posel sousedního krále."
+    ],
+    "correct": "Rozhořčený kněz.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Jak Tantalos odpověděl na obvinění z ukrývání zlatého psa?",
+    "a": [
+      "Křivě přísahal, že sošku nemá.",
+      "Tvrdil, že je to Diův dar.",
+      "Obvinil syna.",
+      "Nabídl za ni peníze."
+    ],
+    "correct": "Křivě přísahal, že sošku nemá.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Proč bohové nepotrestali Tantala ihned po ukrytí psa?",
+    "a": [
+      "Dávali mu příležitost k nápravě.",
+      "Nevěděli, kde je.",
+      "Čekali na zloděje.",
+      "Báli se zákona pohostinnosti."
+    ],
+    "correct": "Dávali mu příležitost k nápravě.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Co Tantalos odnášel z božských hostin lidem?",
+    "a": [
+      "Nektar a ambrózii.",
+      "Zlaté nádobí.",
+      "Léčivé byliny.",
+      "Božské zbraně."
+    ],
+    "correct": "Nektar a ambrózii.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Jak se jmenoval syn zabitý Tantalem?",
+    "a": [
+      "Pelops.",
+      "Perseus.",
+      "Théseus.",
+      "Péleus."
+    ],
+    "correct": "Pelops.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Jak Tantalos zkoušel bohy na hostině ve svém paláci?",
+    "a": [
+      "Předložil jim maso vlastního syna.",
+      "Otrávil víno.",
+      "Zabil posvátné zvíře.",
+      "Ukradl chrámové oběti."
+    ],
+    "correct": "Předložil jim maso vlastního syna.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Která bohyně ochutnala pokrm z Tantalova syna?",
+    "a": [
+      "Démétér.",
+      "Héra.",
+      "Athéna.",
+      "Afrodita."
+    ],
+    "correct": "Démétér.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Jak Tantalos reagoval, když bohové poznali pokrm z jeho syna?",
+    "a": [
+      "Polekal se a prosil o slitování.",
+      "Vysmíval se jim.",
+      "Obvinil kuchaře.",
+      "Uprchl."
+    ],
+    "correct": "Polekal se a prosil o slitování.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Kdo srazil Tantala do tartaru?",
+    "a": [
+      "Zeus.",
+      "Hádes.",
+      "Poseidón.",
+      "Hermes."
+    ],
+    "correct": "Zeus.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Co se dělo s vodou, když se Tantalos v podsvětí chtěl napít?",
+    "a": [
+      "Zmizela a zůstal suchý písek.",
+      "Změnila se ve slanou.",
+      "Vřela.",
+      "Zamrzla."
+    ],
+    "correct": "Zmizela a zůstal suchý písek.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Proč Tantalos v podsvětí nedosáhl na ovoce?",
+    "a": [
+      "Vítr zvedal větve do výšky.",
+      "Plody se rozpadaly.",
+      "Odnášeli je ptáci.",
+      "Větve se měnily v hady."
+    ],
+    "correct": "Vítr zvedal větve do výšky.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Co kromě hladu a žízně trýznilo Tantala?",
+    "a": [
+      "Balvan nad hlavou hrozící pádem.",
+      "Oheň ve vodě.",
+      "Orel trhající játra.",
+      "Zařezávající se řetězy."
+    ],
+    "correct": "Balvan nad hlavou hrozící pádem.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Která sudička vrátila Pelopa k životu?",
+    "a": [
+      "Klóthó.",
+      "Atropos.",
+      "Lachesis.",
+      "Žádná, oživil ho Apollón."
+    ],
+    "correct": "Klóthó.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Čím bohové nahradili část Pelopovy lopatky?",
+    "a": [
+      "Slonovou kostí.",
+      "Zlatem.",
+      "Mramorem.",
+      "Stříbrem."
+    ],
+    "correct": "Slonovou kostí.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Jaké znamení mívali Pelopovi potomci?",
+    "a": [
+      "Bílou skvrnu na lopatce.",
+      "Zlatý pramen vlasů.",
+      "Skvrnu na čele.",
+      "Delší prst."
+    ],
+    "correct": "Bílou skvrnu na lopatce.",
+    "cast": "Tantalos"
+  },
+  {
+    "q": "Které město založil Sisyfos?",
+    "a": [
+      "Korint.",
+      "Théby.",
+      "Athény.",
+      "Spartu."
+    ],
+    "correct": "Korint.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Co chybělo Sisyfovu hradu?",
+    "a": [
+      "Vlastní pramen vody.",
+      "Hradby.",
+      "Přístupová cesta.",
+      "Obytné místnosti."
+    ],
+    "correct": "Vlastní pramen vody.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Co Sisyfos nabídl Asópovi za pomoc?",
+    "a": [
+      "Prozrazení Diova úkrytu.",
+      "Poklad.",
+      "Nový chrám.",
+      "Každoroční oběť býka."
+    ],
+    "correct": "Prozrazení Diova úkrytu.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Jak Asópos opatřil hradu vodu?",
+    "a": [
+      "Dotkl se skal na nádvoří a vyvolal pramen.",
+      "Změnil koryto řeky.",
+      "Přivolal déšť.",
+      "Našel starou studnu."
+    ],
+    "correct": "Dotkl se skal na nádvoří a vyvolal pramen.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Jak Zeus zasáhl proti Asópovi?",
+    "a": [
+      "Mrštil po něm bleskem.",
+      "Spoutal ho.",
+      "Proměnil ho v kámen.",
+      "Vyhnal ho do podsvětí."
+    ],
+    "correct": "Mrštil po něm bleskem.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Co řeka přinášela po pádu popáleného Asópa?",
+    "a": [
+      "Kousky uhlí.",
+      "Zlatý písek.",
+      "Mramor.",
+      "Žhavé kameny."
+    ],
+    "correct": "Kousky uhlí.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Proč Zeus poprvé poslal Smrt pro Sisyfa?",
+    "a": [
+      "Prozradil jeho úkryt.",
+      "Ukradl nektar.",
+      "Zničil chrám.",
+      "Odmítl hosta."
+    ],
+    "correct": "Prozradil jeho úkryt.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Jak Sisyfos přemohl Smrt na hradě?",
+    "a": [
+      "Spoutal ji dvěma provazy.",
+      "Opil ji.",
+      "Podplatil ji.",
+      "Vlákal ji do kouzelného kruhu."
+    ],
+    "correct": "Spoutal ji dvěma provazy.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Kam Sisyfos zavřel spoutanou Smrt?",
+    "a": [
+      "Do komory.",
+      "Do studny.",
+      "Do jeskyně.",
+      "Do věže."
+    ],
+    "correct": "Do komory.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Co se dělo s nemocnými za uvěznění Smrti?",
+    "a": [
+      "Trpěli dál, ale neumírali.",
+      "Uzdravili se.",
+      "Necítili bolest.",
+      "Upadli do spánku."
+    ],
+    "correct": "Trpěli dál, ale neumírali.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Co se dělo s poraněnými zvířaty za uvěznění Smrti?",
+    "a": [
+      "Žila dál i s těžkými zraněními.",
+      "Ihned se uzdravila.",
+      "Zkameněla.",
+      "Zmizela."
+    ],
+    "correct": "Žila dál i s těžkými zraněními.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Kdo osvobodil Smrt ze Sisyfova hradu?",
+    "a": [
+      "Áres.",
+      "Hermes.",
+      "Héfaistos.",
+      "Apollón."
+    ],
+    "correct": "Áres.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Co Smrt udělala hned po osvobození?",
+    "a": [
+      "Odvlekla Sisyfa do podsvětí.",
+      "Šla na Olymp.",
+      "Potrestala služebníky.",
+      "Zničila hrad."
+    ],
+    "correct": "Odvlekla Sisyfa do podsvětí.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Co Sisyfos před smrtí přikázal manželce?",
+    "a": [
+      "Nekonat pohřební oběti.",
+      "Ukryt jeho tělo.",
+      "Obětovat zlato.",
+      "Opustit Korint."
+    ],
+    "correct": "Nekonat pohřební oběti.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Na co si Sisyfos stěžoval v podsvětí?",
+    "a": [
+      "Manželka zanedbala pohřební obřady.",
+      "Cizinec obsadil trůn.",
+      "Nerozloučil se se synem.",
+      "Potrestali ho omylem."
+    ],
+    "correct": "Manželka zanedbala pohřební obřady.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Kdo dovolil Sisyfovi návrat mezi živé?",
+    "a": [
+      "Persefona.",
+      "Zeus.",
+      "Hádes.",
+      "Áres."
+    ],
+    "correct": "Persefona.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Pod jakou záminkou se Sisyfos vrátil z podsvětí?",
+    "a": [
+      "Připomenout manželce pohřební povinnosti.",
+      "Předat vládu.",
+      "Přinést poslední oběť.",
+      "Napravit uvěznění Smrti."
+    ],
+    "correct": "Připomenout manželce pohřební povinnosti.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Jak se Sisyfos po návratu choval k manželce?",
+    "a": [
+      "Chválil ji za splnění příkazu.",
+      "Vyhnal ji.",
+      "Vynutil si pohřební oběti.",
+      "Nemluvil s ní."
+    ],
+    "correct": "Chválil ji za splnění příkazu.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Při čem Smrt zastihla Sisyfa podruhé?",
+    "a": [
+      "Zvedal číši k přípitku na hostině.",
+      "Chodil po hradbách.",
+      "Obětoval u oltáře.",
+      "Ukazoval pramen."
+    ],
+    "correct": "Zvedal číši k přípitku na hostině.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Jaký byl Sisyfův věčný trest?",
+    "a": [
+      "Valit balvan do kopce, odkud sjížděl zpět.",
+      "Nosit vodu v děravé nádobě.",
+      "Stát pod hrozícím balvanem.",
+      "Hledat cestu podsvětím."
+    ],
+    "correct": "Valit balvan do kopce, odkud sjížděl zpět.",
+    "cast": "Sisyfos"
+  },
+  {
+    "q": "Co věštba předpověděla Akrisiovi?",
+    "a": [
+      "Zabije ho vlastní vnuk.",
+      "Zničí ho mořská obluda.",
+      "Dcera mu vezme trůn.",
+      "Utopí se."
+    ],
+    "correct": "Zabije ho vlastní vnuk.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jak Zeus pronikl k uvězněné Danaé?",
+    "a": [
+      "Jako zlatý déšť.",
+      "Jako orel.",
+      "Jako býk.",
+      "Jako stříbrná mlha."
+    ],
+    "correct": "Jako zlatý déšť.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jak se Akrisios zbavil Danaé a malého Persea?",
+    "a": [
+      "Dal je v bedně vhodit do moře.",
+      "Odvedl je do hor.",
+      "Poslal je na loď bez vesel.",
+      "Opustil je na pustém ostrově."
+    ],
+    "correct": "Dal je v bedně vhodit do moře.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Kdo zachránil Danaé a malého Persea?",
+    "a": [
+      "Rybáři.",
+      "Válečníci.",
+      "Kněží.",
+      "Kupci."
+    ],
+    "correct": "Rybáři.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Proč král ostrova podporoval Perseův odchod?",
+    "a": [
+      "Bál se o vlastní trůn.",
+      "Chtěl mu dát cizí zemi.",
+      "Gorgony napadaly ostrov.",
+      "Přikázala to Athéna."
+    ],
+    "correct": "Bál se o vlastní trůn.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jak Perseovi pomáhal Athénin štít?",
+    "a": [
+      "Bezpečně v něm sledoval Medusin obraz.",
+      "Dělal ho neviditelným.",
+      "Uspával Gorgony.",
+      "Odrážel hadí uštknutí."
+    ],
+    "correct": "Bezpečně v něm sledoval Medusin obraz.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jakou zbraň dala Athéna Perseovi proti Meduse?",
+    "a": [
+      "Ocelový srp.",
+      "Zlatý meč.",
+      "Bronzovou sekeru.",
+      "Stříbrné kopí."
+    ],
+    "correct": "Ocelový srp.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Co sdílely tři stařeny, sestry Gorgon?",
+    "a": [
+      "Jedno oko a jeden zub.",
+      "Hůl a plášť.",
+      "Ruku a nohu.",
+      "Hlas a sluch."
+    ],
+    "correct": "Jedno oko a jeden zub.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Co Perseus žádal za vrácení oka a zubu?",
+    "a": [
+      "Cestu k nymfám.",
+      "Medusino jméno.",
+      "Klíč k obydlí Gorgon.",
+      "Ochranné kouzlo."
+    ],
+    "correct": "Cestu k nymfám.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Co Perseus získal od nymf?",
+    "a": [
+      "Okřídlené střevíce, mošnu a přílbu neviditelnosti.",
+      "Meč, štít a uzdu.",
+      "Luk, toulec a plášť.",
+      "Prsten, hůl a vůz."
+    ],
+    "correct": "Okřídlené střevíce, mošnu a přílbu neviditelnosti.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jak Perseus poznal Medusu mezi spícími Gorgonami?",
+    "a": [
+      "Athéna označila prostřední.",
+      "Jediná neměla křídla.",
+      "Měla korunu.",
+      "Sestry ji oslovily."
+    ],
+    "correct": "Athéna označila prostřední.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Co vyskočilo z Medusina hrdla?",
+    "a": [
+      "Pegasos.",
+      "Ohnivý drak.",
+      "Zlatý orel.",
+      "Tříhlavý pes."
+    ],
+    "correct": "Pegasos.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Proč Atlas nechtěl nechat Persea odpočinout?",
+    "a": [
+      "Podezíral ho, že chce zlatá jablka.",
+      "Pokládal ho za trestajícího posla.",
+      "Bál se Gorgon.",
+      "Bál se o stáda."
+    ],
+    "correct": "Podezíral ho, že chce zlatá jablka.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Co vznikalo z Medusiny krve dopadající v Africe na zem?",
+    "a": [
+      "Jedovatí hadi.",
+      "Černé kameny.",
+      "Jedovaté rostliny.",
+      "Žhavé uhlíky."
+    ],
+    "correct": "Jedovatí hadi.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Čím Kassiopeia přivolala trest na své království?",
+    "a": [
+      "Chlubila se krásou nad mořské nymfy.",
+      "Zakázala oběti Poseidónovi.",
+      "Zabila posvátné zvíře.",
+      "Vyvyšovala dceru nad Athénu."
+    ],
+    "correct": "Chlubila se krásou nad mořské nymfy.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jak Perseus nakonec přemohl obludu ohrožující Andromedu?",
+    "a": [
+      "Ukázal jí Medusinu hlavu.",
+      "Probodl jí oko.",
+      "Zavalil ji v jeskyni.",
+      "Spoutal ji řetězy."
+    ],
+    "correct": "Ukázal jí Medusinu hlavu.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Co vzniklo z větviček pod mošnou s Medusinou hlavou?",
+    "a": [
+      "Korály.",
+      "Perly.",
+      "Mořská pěna.",
+      "Zlaté řasy."
+    ],
+    "correct": "Korály.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jak Perseus chránil přátele před Medusinou hlavou při útoku Fínea?",
+    "a": [
+      "Vyzval je k odvrácení tváře.",
+      "Zakryl je pláštěm.",
+      "Poslal je do chodby.",
+      "Dal jim štíty."
+    ],
+    "correct": "Vyzval je k odvrácení tváře.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jak král ostrova reagoval na zprávu, že Perseus přinesl Medusinu hlavu?",
+    "a": [
+      "Vysmíval se mu jako lháři.",
+      "Prosil o odpuštění.",
+      "Nabídl mu trůn.",
+      "Přikázal zahodit mošnu."
+    ],
+    "correct": "Vysmíval se mu jako lháři.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Jak Perseus nechtěně zabil děda Akrisia?",
+    "a": [
+      "Zasáhl ho diskem při hrách.",
+      "Ukázal mu Medusinu hlavu.",
+      "Probodl ho v souboji.",
+      "Potopil jeho loď."
+    ],
+    "correct": "Zasáhl ho diskem při hrách.",
+    "cast": "Perseus"
+  },
+  {
+    "q": "Na jaký nástroj hrál Orfeus?",
+    "a": [
+      "Na lyru.",
+      "Na flétnu.",
+      "Na syrinx.",
+      "Na harfu."
+    ],
+    "correct": "Na lyru.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Jak se zvířata chovala při Orfeově zpěvu?",
+    "a": [
+      "Šelmy neubližovaly své kořisti.",
+      "Skrývala se.",
+      "Zpívala s ním.",
+      "Upadala do neprobuditelného spánku."
+    ],
+    "correct": "Šelmy neubližovaly své kořisti.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Kým byla Eurydika?",
+    "a": [
+      "Vodní vílou.",
+      "Královskou dcerou.",
+      "Athéninou kněžkou.",
+      "Jednou z Múz."
+    ],
+    "correct": "Vodní vílou.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Kam šla Eurydika při osudném setkání s hadem?",
+    "a": [
+      "Za družkami, vodními vílami.",
+      "Na slavnost.",
+      "Za Orfeem na hostinu.",
+      "Do chrámu."
+    ],
+    "correct": "Za družkami, vodními vílami.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Co způsobilo Eurydičinu smrt?",
+    "a": [
+      "Hadí uštknutí.",
+      "Pád ze skály.",
+      "Utonutí.",
+      "Šíp lovce."
+    ],
+    "correct": "Hadí uštknutí.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Jaké byly Orfeovy písně po Eurydičině smrti?",
+    "a": [
+      "Žalostné, vyvolávaly pláč.",
+      "Oslavovaly hrdiny.",
+      "Vyzývaly ke vzpouře.",
+      "Přestaly působit na přírodu."
+    ],
+    "correct": "Žalostné, vyvolávaly pláč.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Jak příroda Orfeovi ukazovala cestu do podsvětí?",
+    "a": [
+      "Větvemi stromů a skloněnými stébly trávy.",
+      "Kamínky od ptáků.",
+      "Změnou toku řek.",
+      "Odvalováním skal zvířaty."
+    ],
+    "correct": "Větvemi stromů a skloněnými stébly trávy.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Jak Orfeus překonal Kerbera?",
+    "a": [
+      "Utišil ho zpěvem.",
+      "Dal mu uspávací nápoj.",
+      "Odlákal ho masem.",
+      "Přikryl ho pláštěm."
+    ],
+    "correct": "Utišil ho zpěvem.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Proč Charón nejprve odmítal Orfea převézt?",
+    "a": [
+      "Byl živý.",
+      "Neměl peníze.",
+      "Člun byl rozbitý.",
+      "Nesměl vozit hudebníky."
+    ],
+    "correct": "Byl živý.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Jak Orfeův zpěv působil na duše v tartaru?",
+    "a": [
+      "Dočasně jim ulevoval od muk.",
+      "Mazal jim jména z paměti.",
+      "Navždy je osvobozoval.",
+      "Vracel jim život."
+    ],
+    "correct": "Dočasně jim ulevoval od muk.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Čím Orfeus podpořil prosbu o Eurydiku?",
+    "a": [
+      "Jednou oba stejně přijdou do podsvětí.",
+      "Pošle za ni jinou duši.",
+      "Vymění ji za lyru.",
+      "Už nikdy nezazpívá."
+    ],
+    "correct": "Jednou oba stejně přijdou do podsvětí.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Jakou podmínku dal Hádes Orfeovi?",
+    "a": [
+      "Neohlédnout se za Eurydikou před vyjitím na povrch.",
+      "Nepromluvit.",
+      "Nepustit její ruku.",
+      "Nezastavit se."
+    ],
+    "correct": "Neohlédnout se za Eurydikou před vyjitím na povrch.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Proč se Orfeus ohlédl za Eurydikou?",
+    "a": [
+      "Neslyšel její kroky a bál se o ni.",
+      "Slyšel její výkřik.",
+      "Ukazoval jí východ.",
+      "Myslel, že jsou oba venku."
+    ],
+    "correct": "Neslyšel její kroky a bál se o ni.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Jak dlouho Orfeus po druhé ztrátě Eurydiky zkoušel překročit podsvětní řeku?",
+    "a": [
+      "Sedm dní.",
+      "Tři dny.",
+      "Deset dní.",
+      "Měsíc."
+    ],
+    "correct": "Sedm dní.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Co se stalo na holé pláni, kde Orfeus po návratu zpíval?",
+    "a": [
+      "Přišly stromy a vytvořily háj.",
+      "Vzniklo jezero.",
+      "Napadl věčný sníh.",
+      "Otevřel se vchod do podsvětí."
+    ],
+    "correct": "Přišly stromy a vytvořily háj.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Kdo napadl zpívajícího Orfea v háji?",
+    "a": [
+      "Bakchantky.",
+      "Lovci.",
+      "Královi vojáci.",
+      "Mořské nymfy."
+    ],
+    "correct": "Bakchantky.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Proč kameny bakchantek nakonec Orfea zasáhly?",
+    "a": [
+      "Jejich křik přehlušil zpěv.",
+      "Odložil lyru a utíkal.",
+      "Bakchos ho zbavil daru.",
+      "Kameny byly posvátné."
+    ],
+    "correct": "Jejich křik přehlušil zpěv.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Jak Bakchos potrestal Orfeovy vražedkyně?",
+    "a": [
+      "Proměnil je ve stromy.",
+      "Vzal jim hlas.",
+      "Proměnil je v sochy.",
+      "Poslal je bloudit podsvětím."
+    ],
+    "correct": "Proměnil je ve stromy.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Co čekalo Orfeovu duši po smrti?",
+    "a": [
+      "Shledání s Eurydikou bez zákazu ohlédnutí.",
+      "Věčný trest.",
+      "Návrat jako slavík.",
+      "Služba Charónovi."
+    ],
+    "correct": "Shledání s Eurydikou bez zákazu ohlédnutí.",
+    "cast": "Orfeus"
+  },
+  {
+    "q": "Kam doplula Orfeova hlava s lyrou?",
+    "a": [
+      "Na Lesbos.",
+      "Na Krétu.",
+      "Na Naxos.",
+      "Na Rhodos."
+    ],
+    "correct": "Na Lesbos.",
+    "cast": "Orfeus"
+  }
+];
+
+let quiz = [];
+let index = 0;
+let points = 0;
+let locked = false;
+let started = false;
+let finished = false;
+let cheatTimer = null;
+let timeLeft = QUESTION_TIME;
+let timerInterval = null;
+let revealTimeout = null;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+let audioCtx = null;
+
+function ensureAudio() {
+  try {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === "suspended") {
+      audioCtx.resume();
+    }
+  } catch(e) {}
+}
+
+function sound(freq1, freq2, length=0.24, gainMax=0.50, type="triangle") {
+  try {
+    ensureAudio();
+    if (!audioCtx) return;
+
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    osc.type = type;
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.frequency.setValueAtTime(freq1, now);
+    if (freq2 && freq2 !== freq1) {
+      osc.frequency.exponentialRampToValueAtTime(freq2, now + length * 0.75);
+    }
+
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(gainMax, now + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + length);
+
+    osc.start(now);
+    osc.stop(now + length + 0.04);
+  } catch(e) {}
+}
+
+function soundGood() {
+  sound(720, 980, .18, .42, "triangle");
+  setTimeout(() => sound(980, 1320, .16, .42, "triangle"), 115);
+  setTimeout(() => sound(1320, 1560, .14, .35, "triangle"), 230);
+}
+
+function soundBad() {
+  // Mobilně slyšitelnější chyba: vyšší, ostrý, dvojitý sestupný tón.
+  sound(620, 360, 0.22, 0.70, "square");
+  setTimeout(() => sound(520, 260, 0.24, 0.70, "square"), 210);
+}
+
+function soundTick() {
+  sound(520, 520, .05, .16, "sine");
+}
+
+function soundCheat() {
+  sound(1400, 300, .30, .75, "sawtooth");
+  setTimeout(() => sound(300, 1400, .30, .75, "sawtooth"), 300);
+  setTimeout(() => sound(1400, 250, .42, .80, "sawtooth"), 620);
+}
+
+function soundEnd(pass) {
+  pass ? soundGood() : soundBad();
+}
+
+
+function startQuiz() {
+  ensureAudio();
+  const surname = document.getElementById("surname").value.trim();
+  const className = document.getElementById("className").value.trim();
+
+  if (!surname || !className) {
+    alert("Vyplň prosím příjmení i třídu.");
+    return;
+  }
+
+  const sections = ["Prométheus", "Midas", "Tantalos", "Sisyfos", "Perseus", "Orfeus"];
+  const selected = sections.flatMap(section =>
+    shuffle(QUESTIONS.filter(item => item.cast === section)).slice(0, 4)
+  );
+  quiz = shuffle(selected).map(item => ({...item, a: shuffle(item.a)}));
+  index = 0;
+  points = 0;
+  locked = false;
+  started = true;
+  finished = false;
+
+  document.getElementById("screenStart").classList.add("hidden");
+  document.getElementById("screenResult").classList.add("hidden");
+  document.getElementById("screenQuiz").classList.remove("hidden");
+
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if (document.activeElement && typeof document.activeElement.blur === "function") {
+    document.activeElement.blur();
+  }
+  clearTimers();
+  locked = false;
+  timeLeft = QUESTION_TIME;
+
+  const item = quiz[index];
+  document.getElementById("progress").textContent = `Otázka ${index + 1}/${quiz.length}`;
+  document.getElementById("score").textContent = `Body: ${points}`;
+  document.getElementById("balladBadge").textContent = item.cast || "ŘECKÉ BÁJE";
+  document.getElementById("question").textContent = item.q;
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("feedback").className = "feedback";
+  updateTimerDisplay();
+
+  const box = document.getElementById("answers");
+  box.innerHTML = "";
+
+  item.a.forEach(ans => {
+    const btn = document.createElement("button");
+    btn.className = "answer";
+    btn.textContent = ans;
+    btn.style.pointerEvents = "auto";
+    btn.onclick = () => chooseAnswer(btn, ans);
+    box.appendChild(btn);
+  });
+
+  timerInterval = setInterval(() => {
+    timeLeft -= 1;
+    updateTimerDisplay();
+    if (timeLeft <= 3 && timeLeft > 0) soundTick();
+    if (timeLeft <= 0) {
+      handleWrongOrTimeout();
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  document.getElementById("timeText").textContent = `Čas: ${Math.max(0, timeLeft)} s`;
+}
+
+function chooseAnswer(btn, ans) {
+  ensureAudio();
+  if (locked || finished) return;
+  locked = true;
+  clearInterval(timerInterval);
+
+  const item = quiz[index];
+  const buttons = [...document.querySelectorAll(".answer")];
+  buttons.forEach(b => b.disabled = true);
+
+  if (ans === item.correct) {
+    points++;
+    btn.classList.add("correctReveal");
+    document.getElementById("feedback").textContent = "SPRÁVNĚ";
+    document.getElementById("feedback").className = "feedback good";
+    document.getElementById("score").textContent = `Body: ${points}`;
+    soundGood();
+  } else {
+    btn.classList.add("wrongReveal");
+    const correctBtn = buttons.find(b => b.textContent === item.correct);
+    if (correctBtn) correctBtn.classList.add("correctReveal");
+    document.getElementById("feedback").textContent = "CHYBA";
+    document.getElementById("feedback").className = "feedback bad";
+    soundBad();
+  }
+
+  revealTimeout = setTimeout(nextQuestionAuto, REVEAL_TIME);
+}
+
+function handleWrongOrTimeout() {
+  if (locked || finished) return;
+  locked = true;
+  clearInterval(timerInterval);
+
+  const item = quiz[index];
+  const buttons = [...document.querySelectorAll(".answer")];
+  buttons.forEach(b => {
+    b.disabled = true;
+    if (b.textContent === item.correct) b.classList.add("correctReveal");
+  });
+
+  document.getElementById("feedback").textContent = "ČAS VYPRŠEL";
+  document.getElementById("feedback").className = "feedback bad";
+  soundBad();
+
+  revealTimeout = setTimeout(nextQuestionAuto, REVEAL_TIME);
+}
+
+function nextQuestionAuto() {
+  index++;
+  if (index >= quiz.length) finishQuiz(false);
+  else renderQuestion();
+}
+
+function clearTimers() {
+  clearInterval(timerInterval);
+  clearTimeout(revealTimeout);
+}
+
+
+function getGrade(score) {
+  if (score >= 22) return "1";
+  if (score >= 19) return "2";
+  if (score >= 16) return "3";
+  if (score >= 13) return "4";
+  return "5";
+}
+
+function finishQuiz(byCheat) {
+  if (finished) return;
+  finished = true;
+  started = false;
+  clearTimers();
+  clearTimeout(cheatTimer);
+
+  const passed = !byCheat && points >= PASS_LIMIT;
+  const grade = byCheat ? "6" : getGrade(points);
+  const vysledekText = byCheat ? "neplatné" : (passed ? "USPĚL" : "NEUSPĚL");
+  const znamka = byCheat ? "6" : grade;
+  const note = byCheat
+    ? "Test ukončen: opuštění okna aplikace / podezření na podvod."
+    : (passed ? `Splněno. Známka: ${grade}.` : `Nesplněno. Známka: ${grade}.`);
+
+  document.getElementById("screenQuiz").classList.add("hidden");
+  document.getElementById("screenResult").classList.remove("hidden");
+  document.getElementById("finalTitle").textContent = byCheat ? "TEST UKONČEN" : vysledekText;
+  document.getElementById("finalText").innerHTML = byCheat
+    ? `
+      <div class="resultScore">
+        <div class="resultLabel">ZÍSKANÉ BODY</div>
+        <div class="resultValue">${points}/${quiz.length}</div>
+      </div>
+      <div class="resultScore">
+        <div class="resultLabel">ZNÁMKA</div>
+        <div class="resultGrade">6</div>
+      </div>
+      <p class="small">Aplikace zaznamenala opuštění testu.</p>
+    `
+    : `
+      <div class="resultScore">
+        <div class="resultLabel">ZÍSKANÉ BODY</div>
+        <div class="resultValue">${points}/${quiz.length}</div>
+      </div>
+      <div class="resultScore">
+        <div class="resultLabel">ZNÁMKA</div>
+        <div class="resultGrade">${grade}</div>
+      </div>
+      <p class="small">Limit pro úspěch: ${PASS_LIMIT}/${TEST_COUNT}.</p>
+    `;
+
+  if (byCheat) {
+    soundCheat();
+  } else {
+    soundEnd(passed);
+  }
+  sendResult(znamka, note, vysledekText);
+}
+
+function goMenu() {
+  clearTimers();
+  document.getElementById("screenQuiz").classList.add("hidden");
+  document.getElementById("screenResult").classList.add("hidden");
+  document.getElementById("screenStart").classList.remove("hidden");
+  document.getElementById("surname").value = "";
+  document.getElementById("className").value = "";
+  document.getElementById("surname").focus();
+}
+
+function sendResult(znamka, note, vysledekText) {
+  const status = document.getElementById("sendStatus");
+
+  if (!WEB_APP_URL) {
+    status.textContent = "Výsledek nebyl odeslán – v HTML je nutné doplnit URL Apps Scriptu.";
+    return;
+  }
+
+  const data = new URLSearchParams();
+  data.append("timestamp", new Date().toISOString());
+  data.append("aplikace", APP_NAME);
+  data.append("trida", document.getElementById("className").value.trim());
+  data.append("prijmeni", document.getElementById("surname").value.trim());
+  data.append("jmeno", document.getElementById("surname").value.trim());
+  data.append("vysledek", vysledekText || znamka);
+  data.append("znamka", znamka);
+  data.append("body", String(points));
+  data.append("celkem", String(quiz.length));
+  data.append("spravne", String(points));
+  data.append("spatne", String(quiz.length - points));
+  data.append("rezim", note.includes("opuštění") ? "PŘEKLIKNUTÍ" : "TEST");
+  data.append("poznamka", note);
+  data.append("odeslano", new Date().toLocaleString("cs-CZ"));
+  data.append("technika", "skryty_formular_iframe");
+
+  // Odeslání výsledku do tabulky pomocí skrytého formuláře.
+  const iframeName = "odesilaci_iframe";
+  let iframe = document.querySelector('iframe[name="' + iframeName + '"]');
+  if (!iframe) {
+    iframe = document.createElement("iframe");
+    iframe.name = iframeName;
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+  }
+
+  const form = document.createElement("form");
+  form.method = "POST";
+  form.action = WEB_APP_URL;
+  form.target = iframeName;
+  form.style.display = "none";
+
+  for (const [key, value] of data.entries()) {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = key;
+    input.value = value;
+    form.appendChild(input);
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+  status.textContent = "Výsledek byl předán k odeslání do tabulky.";
+  setTimeout(() => form.remove(), 1500);
+}
+
+/*
+  Ochrana proti překliknutí:
+  - krátké omylem vyvolané rozostření nestačí;
+  - test se ukončí až při skutečném skrytí stránky delším než 1,2 s.
+*/
+document.addEventListener("visibilitychange", () => {
+  if (!started || finished) return;
+
+  if (document.hidden) {
+    cheatTimer = setTimeout(() => {
+      if (started && !finished && document.hidden) finishQuiz(true);
+    }, 1200);
+  } else {
+    clearTimeout(cheatTimer);
+  }
+});
+
+
+const startBtnElement = document.getElementById("startBtn");
+if (startBtnElement) {
+  startBtnElement.addEventListener("click", startQuiz);
+}
+
+window.addEventListener("pagehide", () => {
+  if (started && !finished) finishQuiz(true);
+});
+</script>
+</body>
+</html>
